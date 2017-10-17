@@ -17,6 +17,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 
 /**
@@ -47,6 +48,13 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     GoogleMap m_map;
     boolean mapReady = false;
     MarkerOptions HotelTugu, BalaiKota, Stasiun, renton, kirkland, kent, Bunka, Shinjuku, Keio, TransitMuseum, NYU;
+    LatLng llRenton = new LatLng(47.489805, -122.120502);
+    LatLng llKirkland = new LatLng(47.73019, -122.1768858);
+    LatLng llEverett = new LatLng(47.978748, -122.202001);
+    LatLng llLynnwood = new LatLng(47.819533, -122.32288);
+    LatLng llMontlake = new LatLng(47.7973733, -122.3281771);
+    LatLng llKent = new LatLng(47.385938, -122.2582);
+    LatLng llShoware = new LatLng(47.38702, -122.23986);
 
     public MapsFragment() {
         // Required empty public constructor
@@ -178,5 +186,14 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         LatLng newYork = new LatLng(40.7484, -73.9857);
         CameraPosition target = CameraPosition.builder().target(newYork).zoom(14).build();
         m_map.moveCamera(CameraUpdateFactory.newCameraPosition(target));
+        m_map.addPolyline(new PolylineOptions().geodesic(true)
+                .add(llRenton)
+                .add(llKirkland)
+                .add(llEverett)
+                .add(llLynnwood)
+                .add(llMontlake)
+                .add(llKent)
+                .add(llShoware)
+                .add(llRenton));
     }
 }
