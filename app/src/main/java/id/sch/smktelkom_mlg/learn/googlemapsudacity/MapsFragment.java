@@ -1,6 +1,7 @@
 package id.sch.smktelkom_mlg.learn.googlemapsudacity;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -195,5 +197,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
                 .add(llKent)
                 .add(llShoware)
                 .add(llRenton));
+        m_map.addCircle(new CircleOptions().center(llRenton).radius(5000).strokeColor(Color.GREEN)
+                .fillColor(Color.argb(64, 0, 255, 0)));
     }
 }
