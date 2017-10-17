@@ -13,6 +13,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -57,17 +58,28 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_maps, container, false);
 
-        HotelTugu = new MarkerOptions().position(new LatLng(-7.9773, 112.6329)).title("Hotel Tugu");
-        BalaiKota = new MarkerOptions().position(new LatLng(-7.978, 112.6338)).title("Balai Kota Malang");
-        Stasiun = new MarkerOptions().position(new LatLng(-7.9775, 112.637)).title("Stasiun Kereta Malang");
-        renton = new MarkerOptions().position(new LatLng(47.489805, -122.120502)).title("Renton");
-        kirkland = new MarkerOptions().position(new LatLng(47.73019, -122.1768858)).title("Kirkland");
-        kent = new MarkerOptions().position(new LatLng(47.385938, -122.2582)).title("Kent Valley");
-        Bunka = new MarkerOptions().position(new LatLng(35.6852, 139.6943)).title("Bunka Gakuen University");
-        Shinjuku = new MarkerOptions().position(new LatLng(35.6912, 139.6926)).title("Shinjuku Sumitomo Building");
-        Keio = new MarkerOptions().position(new LatLng(35.6895, 139.6944)).title("Keio Plaza");
-        TransitMuseum = new MarkerOptions().position(new LatLng(40.6905, -73.9898)).title("New York Transit Museum");
-        NYU = new MarkerOptions().position(new LatLng(40.6942, -73.9865)).title("NYU Tandon School of Engineering");
+        HotelTugu = new MarkerOptions().position(new LatLng(-7.9773, 112.6329)).title("Hotel Tugu")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+        BalaiKota = new MarkerOptions().position(new LatLng(-7.978, 112.6338)).title("Balai Kota Malang")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+        Stasiun = new MarkerOptions().position(new LatLng(-7.9775, 112.637)).title("Stasiun Kereta Malang")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+        renton = new MarkerOptions().position(new LatLng(47.489805, -122.120502)).title("Renton")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+        kirkland = new MarkerOptions().position(new LatLng(47.73019, -122.1768858)).title("Kirkland")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+        kent = new MarkerOptions().position(new LatLng(47.385938, -122.2582)).title("Kent Valley")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+        Bunka = new MarkerOptions().position(new LatLng(35.6852, 139.6943)).title("Bunka Gakuen University")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+        Shinjuku = new MarkerOptions().position(new LatLng(35.6912, 139.6926)).title("Shinjuku Sumitomo Building")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+        Keio = new MarkerOptions().position(new LatLng(35.6895, 139.6944)).title("Keio Plaza")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+        TransitMuseum = new MarkerOptions().position(new LatLng(40.6905, -73.9898)).title("New York Transit Museum")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+        NYU = new MarkerOptions().position(new LatLng(40.6942, -73.9865)).title("NYU Tandon School of Engineering")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
 
         Button btnMap = (Button) view.findViewById(R.id.btnMap);
         Button btnSatellite = (Button) view.findViewById(R.id.btnSatellite);
